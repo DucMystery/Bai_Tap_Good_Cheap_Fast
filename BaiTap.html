@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Làm Bài Tập Good _Fast_Cheap</title>
+    <style>
+        .keo{
+            width: 30px;
+        }
+    </style>
+</head>
+<body>
+   <form>
+       <table>
+           <tr>
+               <td><input type="checkbox" onclick="checkGood()" id="g"></td>
+               <td><span>GOOD</span></td>
+           </tr>
+           <tr>
+               <td><input type="checkbox" onclick="checkFast()" id="f"></td>
+               <td><span>FAST</span></td>
+           </tr>
+           <tr>
+               <td><input type="checkbox" onclick="checkCheap()" id="c"></td>
+               <td><span>CHEAP</span></td>
+           </tr>
+       </table>
+   </form>
+   <script>
+       let good = document.getElementById("g");
+       let fast = document.getElementById("f");
+       let cheap = document.getElementById("c");
+       function checkGood() {
+           if (fast.checked== true && cheap.checked == true){
+              if (Math.random()<0.5){
+                  fast.checked=false;
+              }else {
+                  cheap.checked=false;
+              }
+           }
+       }
+       function checkFast() {
+           if (good.checked==true && cheap.checked==true){
+               if (Math.random()<0.5){
+                   good.checked=false;
+               }else {
+                   cheap.checked=false;
+               }
+           }
+       }
+       function checkCheap() {
+           if (good.checked==true && fast.checked==true){
+               if (Math.random()<0.5){
+                   good.checked=false;
+               }else {
+                   fast.checked=false;
+               }
+           }
+       }
+   </script>
+</body>
+</html>
